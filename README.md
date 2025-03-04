@@ -28,7 +28,7 @@ This project is a full-stack travel booking application that allows users to vie
 2. **Set Up the Database**
     Open your MySQL client.
     Run the SQL queries in lname_fname_Queries.sql to create the database, tables, and insert sample data.
-    Ensure the database name and credentials match those in your .env file.
+    Ensure the database name and credentials match those in the .env file.
 3. **Configure Environment Variables**
     Create a .env file in the project root (if not already present) with the following content:
         DB_HOST=localhost
