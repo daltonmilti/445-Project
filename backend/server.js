@@ -9,11 +9,12 @@ app.use(cors()); // Enable CORS for frontend requests
 
 // Create MySQL connection
 const db = mysql.createConnection({
-  host: 'localhost',  // Change this if running on a remote server
-  user: 'root',       // Your MySQL username
-  password: 'password', // Your MySQL password
-  database: 'db' // Your database name
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME
 });
+
 
 // Connect to MySQL
 db.connect((err) => {

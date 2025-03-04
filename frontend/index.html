@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!--
+    index.html - UI for the Travel Booking Project
+    This file sets up the HTML structure for displaying hotels and travelers.
+  -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Travel Booking</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Hotels in New York</h1>
-  <div id="hotels-container"></div>
+  <header>
+    <h1>Travel Booking</h1>
+  </header>
   
+  <main>
+    <!-- Section for displaying hotels -->
+    <section id="hotels-section">
+      <h2>Hotels in New York</h2>
+      <div id="hotels-container"></div>
+    </section>
+
+    <!-- Section for displaying travelers -->
+    <section id="travelers-section">
+      <h2>Travelers</h2>
+      <ul id="traveler-list"></ul>
+    </section>
+  </main>
+
+  <!-- JavaScript file that handles API calls and DOM updates -->
   <script src="script.js"></script>
 </body>
 </html>
