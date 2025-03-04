@@ -2,70 +2,87 @@
 <html lang="en">
 <head>
   <!--
-    index.html - UI for the Travel Booking Project
-    This file sets up the HTML structure for displaying data from the backend API.
+    index.html - Travel Booking Dashboard
+    A modern UI for displaying data from the backend API.
   -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Travel Booking</title>
+  <title>Travel Booking Dashboard</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>Travel Booking</h1>
+    <div class="navbar">
+      <h1>Travel Booking Dashboard</h1>
+      <nav>
+        <ul>
+          <li><a href="#hotels-section">Hotels</a></li>
+          <li><a href="#travelers-section">Travelers</a></li>
+          <li><a href="#flights-section">Flights</a></li>
+          <li><a href="#activities-section">Activities</a></li>
+          <li><a href="#reviews-section">Reviews</a></li>
+          <li><a href="#reservations-section">Reservations</a></li>
+          <li><a href="#rental-cars-section">Rental Cars</a></li>
+          <li><a href="#travel-agents-section">Travel Agents</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
   
   <main>
     <!-- Hotels Section -->
-    <section id="hotels-section">
+    <section id="hotels-section" class="section">
       <h2>Hotels</h2>
-      <div id="hotels-container"></div>
+      <div id="hotels-container" class="card-container"></div>
     </section>
 
     <!-- Travelers Section -->
-    <section id="travelers-section">
+    <section id="travelers-section" class="section">
       <h2>Travelers</h2>
-      <ul id="traveler-list"></ul>
+      <ul id="traveler-list" class="card-container"></ul>
     </section>
 
     <!-- Flights Section -->
-    <section id="flights-section">
+    <section id="flights-section" class="section">
       <h2>Flights</h2>
-      <div id="flights-container"></div>
+      <div id="flights-container" class="card-container"></div>
     </section>
 
     <!-- Activities Section -->
-    <section id="activities-section">
+    <section id="activities-section" class="section">
       <h2>Activities</h2>
-      <div id="activities-container"></div>
+      <div id="activities-container" class="card-container"></div>
     </section>
 
     <!-- Reviews Section -->
-    <section id="reviews-section">
+    <section id="reviews-section" class="section">
       <h2>Reviews</h2>
-      <div id="reviews-container"></div>
+      <div id="reviews-container" class="card-container"></div>
     </section>
 
     <!-- Reservations Section -->
-    <section id="reservations-section">
+    <section id="reservations-section" class="section">
       <h2>Reservations</h2>
-      <div id="reservations-container"></div>
+      <div id="reservations-container" class="card-container"></div>
     </section>
 
     <!-- Rental Cars Section -->
-    <section id="rental-cars-section">
+    <section id="rental-cars-section" class="section">
       <h2>Rental Cars</h2>
-      <div id="rental-cars-container"></div>
+      <div id="rental-cars-container" class="card-container"></div>
     </section>
 
     <!-- Travel Agents Section -->
-    <section id="travel-agents-section">
+    <section id="travel-agents-section" class="section">
       <h2>Travel Agents</h2>
-      <div id="travel-agents-container"></div>
+      <div id="travel-agents-container" class="card-container"></div>
     </section>
   </main>
 
-  <!-- JavaScript file that handles API calls and DOM updates -->
+  <footer>
+    <p>&copy; 2025 Travel Booking Dashboard. All rights reserved.</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>

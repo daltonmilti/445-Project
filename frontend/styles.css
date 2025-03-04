@@ -1,28 +1,103 @@
-/* styles.css - Styling for the Travel Booking Project UI */
+/* styles.css - Updated styling for the Travel Booking Dashboard */
 
-/* Basic page styling */
+/* Reset margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
-  background-color: #f4f4f4;
-}
-
-/* Header styling */
-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Styling for hotel cards */
-.hotel {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  background-color: #fff;
-}
-
-/* Section headings */
-section h2 {
+  background: #f9f9f9;
   color: #333;
+  line-height: 1.6;
+}
+
+/* Header and Navigation */
+header {
+  background: #005f73;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.navbar {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.navbar h1 {
+  margin-bottom: 0.5rem;
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.navbar nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+  background: #0a9396;
+}
+
+/* Main Content */
+main {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+/* Section Styling */
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  border-bottom: 2px solid #005f73;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Card Container using CSS Grid */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+/* Card Styling for Divs and List Items */
+.card-container > div,
+.card-container > ul > li {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Remove bullet points from lists */
+.card-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Footer Styling */
+footer {
+  background: #005f73;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
 }
