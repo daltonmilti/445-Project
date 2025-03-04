@@ -45,3 +45,15 @@ This project is a full-stack travel booking application that allows users to vie
 6. **Open the UI**
     Open index.html in your web browser.
     The UI will fetch data from the backend and display hotels and travelers.
+
+### Documentation
+    UI Code:
+        The UI is built using HTML, CSS, and JavaScript. Detailed comments in each file explain how data is fetched from the API and how the DOM is updated.
+
+    Backend API:
+        The backend (in server.js) uses Express to set up API endpoints. It connects to a MySQL database using credentials from the .env file and exposes endpoints (e.g., /api/travelers) for retrieving and adding traveler data.
+
+    SQL Queries:
+        All SQL queries related to database creation, table definitions, sample data, and testing queries are documented in the lname_fname_Queries.sql file.
+
+Feel free to reach out if you have any questions or need further assistance.
