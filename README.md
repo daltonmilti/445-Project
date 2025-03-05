@@ -22,9 +22,8 @@ This project is a full-stack travel booking application that allows users to vie
 ### Setup Instructions
 
 1. **Clone the Repository**
-   ```bash
-   git clone <repository-url>
-   cd travel-backend
+    Clone
+    CD to the backend
 2. **Set Up the Database**
     Open your MySQL client.
     Run the SQL queries in lname_fname_Queries.sql to create the database, tables, and insert sample data.
