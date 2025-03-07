@@ -1,9 +1,8 @@
-/* script.js - Connects the UI to the backend API and handles data fetching
-
-  This script waits for the DOM to load, then:
-  1. Fetches hotels, travelers, flights, activities, reviews, reservations,
-     rental cars, and travel agents from the backend API.
-  2. Updates the corresponding containers in the UI with the retrieved data.
+/* script.js - Connects the UI to the backend API and handles data fetching.
+   This script:
+   1. Fetches standard data (hotels, travelers, flights, etc.) and displays it.
+   2. Provides buttons to trigger analytical queries.
+   3. Provides buttons to trigger typical scenario queries.
 */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -13,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(data => {
       const container = document.getElementById("hotels-container");
       if (data.length === 0) {
-        container.innerHTML = "<p>No hotels found in New York with rating >= 4.0.</p>";
+        container.innerHTML = "<p>No hotels found.</p>";
         return;
       }
       data.forEach(hotel => {
@@ -184,4 +183,15 @@ function fetchQueryResults(queryType) {
       resultDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
     })
     .catch(error => console.error("Error fetching query results:", error));
+}
+
+// Function to fetch typical scenario results based on button click
+function fetchTypicalResults(scenarioType) {
+  fetch(`http://localhost:5501/api/typical/${scenarioType}`)
+    .then(response => response.json())
+    .then(data => {
+      const resultDiv = document.getElementById("typical-results");
+      resultDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+    })
+    .catch(error => console.error("Error fetching typical results:", error));
 }

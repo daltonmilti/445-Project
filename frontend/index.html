@@ -25,69 +25,76 @@
           <li><a href="#rental-cars-section">Rental Cars</a></li>
           <li><a href="#travel-agents-section">Travel Agents</a></li>
           <li><a href="#analytics-section">Analytics</a></li>
+          <li><a href="#typical-section">Typical Scenarios</a></li>
         </ul>
       </nav>
     </div>
   </header>
   
   <main>
-    <!-- Hotels Section -->
+    <!-- Existing Data Sections -->
     <section id="hotels-section" class="section">
       <h2>Hotels</h2>
       <div id="hotels-container" class="card-container"></div>
     </section>
 
-    <!-- Travelers Section -->
     <section id="travelers-section" class="section">
       <h2>Travelers</h2>
       <ul id="traveler-list" class="card-container"></ul>
     </section>
 
-    <!-- Flights Section -->
     <section id="flights-section" class="section">
       <h2>Flights</h2>
       <div id="flights-container" class="card-container"></div>
     </section>
 
-    <!-- Activities Section -->
     <section id="activities-section" class="section">
       <h2>Activities</h2>
       <div id="activities-container" class="card-container"></div>
     </section>
 
-    <!-- Reviews Section -->
     <section id="reviews-section" class="section">
       <h2>Reviews</h2>
       <div id="reviews-container" class="card-container"></div>
     </section>
 
-    <!-- Reservations Section -->
     <section id="reservations-section" class="section">
       <h2>Reservations</h2>
       <div id="reservations-container" class="card-container"></div>
     </section>
 
-    <!-- Rental Cars Section -->
     <section id="rental-cars-section" class="section">
       <h2>Rental Cars</h2>
       <div id="rental-cars-container" class="card-container"></div>
     </section>
 
-    <!-- Travel Agents Section -->
     <section id="travel-agents-section" class="section">
       <h2>Travel Agents</h2>
       <div id="travel-agents-container" class="card-container"></div>
     </section>
 
-    <!-- Analytics Section (Hardcoded Examples) -->
+    <!-- Analytics Section -->
     <section id="analytics-section" class="section">
       <h2>Analytical Queries (Hardcoded Examples)</h2>
-      <button onclick="fetchQueryResults('duplicate-bookings')">Check Duplicate Bookings</button>
-      <button onclick="fetchQueryResults('cancellation-policy')">View Active Cancellation Policy</button>
-      <button onclick="fetchQueryResults('dynamic-pricing')">View Booking Counts for Dynamic Pricing</button>
-      <button onclick="fetchQueryResults('itinerary')">Generate Itinerary for New York</button>
-      <button onclick="fetchQueryResults('support-escalation')">View Open Support Tickets</button>
+      <button onclick="fetchQueryResults('popular-destinations')">Popular Destinations</button>
+      <button onclick="fetchQueryResults('cancellations-refunds')">Cancellations & Refunds</button>
+      <button onclick="fetchQueryResults('highest-activity')">Highest Activity</button>
+      <button onclick="fetchQueryResults('customer-spending')">Customer Spending</button>
+      <button onclick="fetchQueryResults('discount-impact')">Discount Impact</button>
       <div id="analytics-results"></div>
+    </section>
+
+    <!-- Typical Scenarios Section -->
+    <section id="typical-section" class="section">
+      <h2>Typical Scenarios (Hardcoded Examples)</h2>
+      <button onclick="fetchTypicalResults('search-services')">Search for Services</button>
+      <button onclick="fetchTypicalResults('book-service')">Book a Travel Service</button>
+      <button onclick="fetchTypicalResults('manage-bookings')">Manage Bookings</button>
+      <button onclick="fetchTypicalResults('process-payment')">Process Payment</button>
+      <button onclick="fetchTypicalResults('leave-review')">Leave a Review</button>
+      <button onclick="fetchTypicalResults('receive-notifications')">Receive Notifications</button>
+      <button onclick="fetchTypicalResults('contact-agent')">Contact a Travel Agent</button>
+      <div id="typical-results"></div>
     </section>
   </main>
 
