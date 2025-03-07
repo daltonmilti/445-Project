@@ -157,10 +157,19 @@ app.get('/api/analytics/duplicate-bookings', (req, res) => {
   `;
   db.query(sql, [customerID, reservationName, reservationType], (err, results) => {
     if (err) {
-      res.status(500).json({ error: err.message });
-      return;
+      return res.status(500).json({ error: err.message });
     }
-    res.json(results);
+    if (results.length > 0) {
+      res.json({
+        message: `Duplicate booking detected for customer ${customerID} with reservation '${reservationName}' (${reservationType}).`,
+        duplicateBookings: results
+      });
+    } else {
+      res.json({
+        message: `No duplicate booking found for customer ${customerID} with reservation '${reservationName}' (${reservationType}).`,
+        duplicateBookings: []
+      });
+    }
   });
 });
 
