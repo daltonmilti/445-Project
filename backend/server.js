@@ -143,6 +143,102 @@ app.get('/api/travelagents', (req, res) => {
   });
 });
 
+// --- Analytical Endpoints ---
+
+// 1. Duplicate Bookings: Hardcoded example
+app.get('/api/analytics/duplicate-bookings', (req, res) => {
+  const customerID = 'T100';
+  const reservationName = 'Spring Break Flight';
+  const reservationType = 'Flight';
+  const sql = `
+    SELECT *
+    FROM Reservation
+    WHERE customerID = ? AND reservationName = ? AND reservationType = ?
+  `;
+  db.query(sql, [customerID, reservationName, reservationType], (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+// 2. Cancellation Policies: Hardcoded example
+app.get('/api/analytics/cancellation-policy', (req, res) => {
+  const sql = `
+    SELECT *
+    FROM Policy
+    WHERE type = 'Cancellation'
+      AND CURDATE() BETWEEN effectiveDate AND expiryDate
+  `;
+  db.query(sql, (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+// 3. Dynamic Pricing: Hardcoded example using booking counts
+app.get('/api/analytics/dynamic-pricing', (req, res) => {
+  const sql = `
+    SELECT H.hotelID, H.hotelName, COUNT(R.reservationID) AS bookingCount
+    FROM Hotel H
+    LEFT JOIN Reservation R ON R.reservationName LIKE CONCAT('%', H.hotelName, '%')
+    GROUP BY H.hotelID
+  `;
+  db.query(sql, (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+// 4. Itinerary Optimization: Hardcoded example for New York
+app.get('/api/analytics/itinerary', (req, res) => {
+  const city = 'New York';
+  const hotelsSql = `SELECT hotelName, city FROM Hotel WHERE city = ?`;
+  const flightsSql = `
+    SELECT F.id AS flightID, F.departureCity, A.airlineName
+    FROM Flight F
+    JOIN Airline A ON F.airline = A.id
+    WHERE F.departureCity = ?
+  `;
+  db.query(hotelsSql, [city], (err, hotels) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    db.query(flightsSql, [city], (err, flights) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+        return;
+      }
+      res.json({ hotels, flights });
+    });
+  });
+});
+
+// 5. Customer Support Escalation: Hardcoded example for open support tickets
+app.get('/api/analytics/support-escalation', (req, res) => {
+  const sql = `
+    SELECT *
+    FROM SupportTicket
+    WHERE status = 'Open'
+  `;
+  db.query(sql, (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
 // Start the server
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {

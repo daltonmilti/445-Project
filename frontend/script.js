@@ -8,7 +8,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   // Fetch Hotels
-  fetch("http://localhost:5001/api/hotels")
+  fetch("http://localhost:5501/api/hotels")
     .then(response => response.json())
     .then(data => {
       const container = document.getElementById("hotels-container");
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(error => console.error("Error fetching hotels:", error));
 
   // Fetch Travelers
-  fetch("http://localhost:5001/api/travelers")
+  fetch("http://localhost:5501/api/travelers")
     .then(response => response.json())
     .then(data => {
       const travelerList = document.getElementById("traveler-list");
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(error => console.error("Error fetching travelers:", error));
 
   // Fetch Flights
-  fetch("http://localhost:5001/api/flights")
+  fetch("http://localhost:5501/api/flights")
     .then(response => response.json())
     .then(data => {
       const container = document.getElementById("flights-container");
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(error => console.error("Error fetching flights:", error));
 
   // Fetch Activities
-  fetch("http://localhost:5001/api/activities")
+  fetch("http://localhost:5501/api/activities")
     .then(response => response.json())
     .then(data => {
       const container = document.getElementById("activities-container");
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(error => console.error("Error fetching activities:", error));
 
   // Fetch Reviews
-  fetch("http://localhost:5001/api/reviews")
+  fetch("http://localhost:5501/api/reviews")
     .then(response => response.json())
     .then(data => {
       const container = document.getElementById("reviews-container");
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(error => console.error("Error fetching reviews:", error));
 
   // Fetch Reservations
-  fetch("http://localhost:5001/api/reservations")
+  fetch("http://localhost:5501/api/reservations")
     .then(response => response.json())
     .then(data => {
       const container = document.getElementById("reservations-container");
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(error => console.error("Error fetching reservations:", error));
 
   // Fetch Rental Cars
-  fetch("http://localhost:5001/api/rentalcars")
+  fetch("http://localhost:5501/api/rentalcars")
     .then(response => response.json())
     .then(data => {
       const container = document.getElementById("rental-cars-container");
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(error => console.error("Error fetching rental cars:", error));
 
   // Fetch Travel Agents
-  fetch("http://localhost:5001/api/travelagents")
+  fetch("http://localhost:5501/api/travelagents")
     .then(response => response.json())
     .then(data => {
       const container = document.getElementById("travel-agents-container");
@@ -174,3 +174,14 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch(error => console.error("Error fetching travel agents:", error));
 });
+
+// Function to fetch analytical query results based on button click
+function fetchQueryResults(queryType) {
+  fetch(`http://localhost:5501/api/analytics/${queryType}`)
+    .then(response => response.json())
+    .then(data => {
+      const resultDiv = document.getElementById("analytics-results");
+      resultDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+    })
+    .catch(error => console.error("Error fetching query results:", error));
+}

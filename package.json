@@ -1,0 +1,24 @@
+{
+  "name": "445-project",
+  "version": "1.0.0",
+  "description": "This project is a full-stack travel booking application that allows users to view hotels, book travel services, and manage traveler information. The project includes a comprehensive SQL database, a Node.js backend, and a user interface (UI) built with HTML, CSS, and JavaScript.",
+  "main": "seed.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daltonmilti/445-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daltonmilti/445-Project/issues"
+  },
+  "homepage": "https://github.com/daltonmilti/445-Project#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "mysql": "^2.18.1"
+  }
+}
